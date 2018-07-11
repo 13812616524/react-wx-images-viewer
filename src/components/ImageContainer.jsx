@@ -392,7 +392,7 @@ class ImageContainer extends PureComponent {
       let x;
       let y;
       const { scale } = this.state;
-      // const width = scale * this.originWidth;
+      const width = scale * this.originWidth;
       const height = scale * this.originHeight;
 
       // 使用相同速度算法
@@ -401,11 +401,14 @@ class ImageContainer extends PureComponent {
 
       if (this.state.scale === this.originScale) {
         x = 0;
-        if (height > this.props.screenHeight) {
-          y = setScope(y, this.props.screenHeight - height, 0);
-        } else {
-          y = this.originTop;
-        }
+      } else {
+        x = setScope(x, this.originWidth - width, 0);
+      }
+
+      if (height > this.props.screenHeight) {
+        y = setScope(y, this.props.screenHeight - height, 0);
+      } else {
+        y = _this.originTop;
       }
 
       // x = setScope(x, this.originWidth - width, 0);
