@@ -408,7 +408,7 @@ class ImageContainer extends PureComponent {
       if (height > this.props.screenHeight) {
         y = setScope(y, this.props.screenHeight - height, 0);
       } else {
-        y = _this.originTop;
+        y = this.originTop;
       }
 
       // x = setScope(x, this.originWidth - width, 0);

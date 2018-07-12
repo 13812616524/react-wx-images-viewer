@@ -402,7 +402,7 @@ var ImageContainer = function (_PureComponent) {
         if (height > _this2.props.screenHeight) {
           y = setScope(y, _this2.props.screenHeight - height, 0);
         } else {
-          y = _this.originTop;
+          y = _this2.originTop;
         }
 
         // x = setScope(x, this.originWidth - width, 0);
